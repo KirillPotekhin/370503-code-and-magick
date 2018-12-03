@@ -3,7 +3,7 @@
 var userDialog = document.querySelector('.setup');
 userDialog.classList.remove('hidden');
 
-var mockFirstName = [
+var firstName = [
   'Иван',
   'Хуан Себастьян',
   'Мария',
@@ -14,7 +14,7 @@ var mockFirstName = [
   'Вашингтон'
 ];
 
-var mockLastName = [
+var lastName = [
   'да Марья',
   'Верон',
   'Мирабелла',
@@ -25,7 +25,7 @@ var mockLastName = [
   'Ирвинг'
 ];
 
-var mockCoatColor = [
+var coatColor = [
   'rgb(101, 137, 164)',
   'rgb(241, 43, 107)',
   'rgb(146, 100, 161)',
@@ -34,7 +34,7 @@ var mockCoatColor = [
   'rgb(0, 0, 0)'
 ];
 
-var mockEyesColor = [
+var eyesColor = [
   'black',
   'red',
   'blue',
@@ -43,8 +43,8 @@ var mockEyesColor = [
 ];
 
 var getName = function (firstName, lastName) {
-  var nickName = firstName[Math.floor(Math.random() * firstName.length)] + ' ' + lastName[Math.floor(Math.random() * lastName.length)];
-  return nickName;
+  var name = firstName[Math.floor(Math.random() * firstName.length)] + ' ' + lastName[Math.floor(Math.random() * lastName.length)];
+  return name;
 };
 
 var getColor = function (colors) {
@@ -56,9 +56,9 @@ var getSimilarWizards = function () {
   var wizards = [];
   for (var i = 0; i < 4; i++) {
     wizards[i] = {};
-    wizards[i].name = getName(mockFirstName, mockLastName);
-    wizards[i].coatColor = getColor(mockCoatColor);
-    wizards[i].eyesColor = getColor(mockEyesColor);
+    wizards[i].name = getName(firstName, lastName);
+    wizards[i].coatColor = getColor(coatColor);
+    wizards[i].eyesColor = getColor(eyesColor);
   }
   return wizards;
 };
