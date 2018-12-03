@@ -42,8 +42,8 @@ var eyesColor = [
   'green'
 ];
 
-var getName = function (firstName, lastName) {
-  var name = firstName[Math.floor(Math.random() * firstName.length)] + ' ' + lastName[Math.floor(Math.random() * lastName.length)];
+var getName = function (valueFirstName, valueLastName) {
+  var name = valueFirstName[Math.floor(Math.random() * valueFirstName.length)] + ' ' + valueLastName[Math.floor(Math.random() * valueLastName.length)];
   return name;
 };
 
