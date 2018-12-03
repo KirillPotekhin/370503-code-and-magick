@@ -3,7 +3,7 @@
 var userDialog = document.querySelector('.setup');
 userDialog.classList.remove('hidden');
 
-var firstName = [
+var firstNames = [
   'Иван',
   'Хуан Себастьян',
   'Мария',
@@ -14,7 +14,7 @@ var firstName = [
   'Вашингтон'
 ];
 
-var lastName = [
+var lastNames = [
   'да Марья',
   'Верон',
   'Мирабелла',
@@ -25,7 +25,7 @@ var lastName = [
   'Ирвинг'
 ];
 
-var coatColor = [
+var coatColors = [
   'rgb(101, 137, 164)',
   'rgb(241, 43, 107)',
   'rgb(146, 100, 161)',
@@ -34,7 +34,7 @@ var coatColor = [
   'rgb(0, 0, 0)'
 ];
 
-var eyesColor = [
+var eyesColors = [
   'black',
   'red',
   'blue',
@@ -42,8 +42,8 @@ var eyesColor = [
   'green'
 ];
 
-var getName = function (valueFirstName, valueLastName) {
-  var name = valueFirstName[Math.floor(Math.random() * valueFirstName.length)] + ' ' + valueLastName[Math.floor(Math.random() * valueLastName.length)];
+var getName = function (firstName, lastName) {
+  var name = firstName[Math.floor(Math.random() * firstName.length)] + ' ' + lastName[Math.floor(Math.random() * lastName.length)];
   return name;
 };
 
@@ -56,9 +56,9 @@ var getSimilarWizards = function () {
   var wizards = [];
   for (var i = 0; i < 4; i++) {
     wizards[i] = {};
-    wizards[i].name = getName(firstName, lastName);
-    wizards[i].coatColor = getColor(coatColor);
-    wizards[i].eyesColor = getColor(eyesColor);
+    wizards[i].name = getName(firstNames, lastNames);
+    wizards[i].coatColor = getColor(coatColors);
+    wizards[i].eyesColor = getColor(eyesColors);
   }
   return wizards;
 };
