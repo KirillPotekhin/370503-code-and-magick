@@ -160,8 +160,7 @@ wizardEyesColor.addEventListener('click', function () {
 });
 
 wizardFireballColor.addEventListener('click', function () {
-  wizardFireballColor.style.background = fireballs[getRandomNumber(0, fireballs.length - 1)];
-  setupFireballInput.value = wizardFireballColor.style.background;
+  var colorFireball = fireballs[getRandomNumber(0, fireballs.length - 1)];
+  wizardFireballColor.style.background = colorFireball;
+  setupFireballInput.value = colorFireball;
 });
-
-// wizardFireballColor.style.backgroundColor = '#111111';
