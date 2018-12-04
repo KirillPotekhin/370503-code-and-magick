@@ -42,6 +42,14 @@ var eyesColors = [
   'green'
 ];
 
+var fireballs = [
+  '#ee4830',
+  '#30a8ee',
+  '#5ce6c0',
+  '#e848d5',
+  '#e6e848'
+];
+
 var getName = function (firstName, lastName) {
   var name = firstName[Math.floor(Math.random() * firstName.length)] + ' ' + lastName[Math.floor(Math.random() * lastName.length)];
   return name;
@@ -135,6 +143,25 @@ var getRandomNumber = function (min, max) {
 
 var setupWizardElement = document.querySelector('.setup-wizard');
 var wizardCoatColor = setupWizardElement.querySelector('.wizard-coat');
+var wizardEyesColor = setupWizardElement.querySelector('.wizard-eyes');
+var setupWizardAppearance = document.querySelector('.setup-wizard-appearance');
+var setupPlayerInputs = setupWizardAppearance.querySelectorAll('input');
+var wizardFireballColor = document.querySelector('.setup-fireball-wrap');
+var setupFireballInput = wizardFireballColor.querySelector('input');
+
 wizardCoatColor.addEventListener('click', function () {
   wizardCoatColor.style.fill = coatColors[getRandomNumber(0, coatColors.length - 1)];
+  setupPlayerInputs[0].value = wizardCoatColor.style.fill;
 });
+
+wizardEyesColor.addEventListener('click', function () {
+  wizardEyesColor.style.fill = eyesColors[getRandomNumber(0, eyesColors.length - 1)];
+  setupPlayerInputs[1].value = wizardEyesColor.style.fill;
+});
+
+wizardFireballColor.addEventListener('click', function () {
+  wizardFireballColor.style.background = fireballs[getRandomNumber(0, fireballs.length - 1)];
+  setupFireballInput.value = wizardFireballColor.style.background;
+});
+
+// wizardFireballColor.style.backgroundColor = '#111111';
