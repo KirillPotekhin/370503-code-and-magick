@@ -90,7 +90,6 @@ var ENTER_KEYCODE = 13;
 
 var setupOpen = document.querySelector('.setup-open');
 var setupClose = userDialog.querySelector('.setup-close');
-var nameForm = userDialog.querySelector('.setup-user-name');
 
 var onPopupEscPress = function (evt) {
   if (evt.keyCode === ESC_KEYCODE && evt.target.tagName !== 'INPUT') {
@@ -116,12 +115,6 @@ setupOpen.addEventListener('keydown', function (evt) {
   if (evt.keyCode === ENTER_KEYCODE) {
     openPopup();
   }
-
-  document.addEventListener('keydown', function (evt) {
-    if (evt.keyCode === ESC_KEYCODE) {
-      closePopup();
-    }
-  });
 });
 
 setupClose.addEventListener('click', function () {
@@ -132,4 +125,16 @@ setupClose.addEventListener('keydown', function (evt) {
   if (evt.keyCode === ENTER_KEYCODE) {
     closePopup();
   }
+});
+
+var getRandomNumber = function (min, max) {
+  var rand = min + Math.random() * (max + 1 - min);
+  rand = Math.floor(rand);
+  return rand;
+};
+
+var setupWizardElement = document.querySelector('.setup-wizard');
+var wizardCoatColor = setupWizardElement.querySelector('.wizard-coat');
+wizardCoatColor.addEventListener('click', function () {
+  wizardCoatColor.style.fill = coatColors[getRandomNumber(0, coatColors.length - 1)];
 });
