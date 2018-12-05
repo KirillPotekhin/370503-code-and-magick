@@ -1,7 +1,6 @@
 'use strict';
 
 var userDialog = document.querySelector('.setup');
-// userDialog.classList.remove('hidden');
 
 var firstNames = [
   'Иван',
@@ -150,13 +149,15 @@ var wizardFireballColor = document.querySelector('.setup-fireball-wrap');
 var setupFireballInput = wizardFireballColor.querySelector('input');
 
 wizardCoatColor.addEventListener('click', function () {
-  wizardCoatColor.style.fill = coatColors[getRandomNumber(0, coatColors.length - 1)];
-  setupPlayerInputs[0].value = wizardCoatColor.style.fill;
+  var colorCoat = coatColors[getRandomNumber(0, coatColors.length - 1)];
+  wizardCoatColor.style.fill = colorCoat;
+  setupPlayerInputs[0].value = colorCoat;
 });
 
 wizardEyesColor.addEventListener('click', function () {
-  wizardEyesColor.style.fill = eyesColors[getRandomNumber(0, eyesColors.length - 1)];
-  setupPlayerInputs[1].value = wizardEyesColor.style.fill;
+  var eyesColor = eyesColors[getRandomNumber(0, eyesColors.length - 1)];
+  wizardEyesColor.style.fill = eyesColor;
+  setupPlayerInputs[1].value = eyesColor;
 });
 
 wizardFireballColor.addEventListener('click', function () {
